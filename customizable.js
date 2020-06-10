@@ -1,8 +1,10 @@
+var fc = document.getElementById("fixed-column");
+
 function myFunction(x) {
   if (x.matches) { // If media query matches
-    document.getElementById("fixed-column").classList.remove("position-fixed");
+    fc.classList.remove("position-fixed");
   } else {
-    document.getElementById("fixed-column").classList.remove("position-fixed");
+    fc.classList.add("position-fixed");
   }
 }
 
