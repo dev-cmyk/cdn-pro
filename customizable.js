@@ -3,7 +3,7 @@ var x = window.matchMedia("(max-width: 1024px)")
 $( document ).ready(function() {
     
   $("#contact_phone").addClass("w-100");
-  $("#contact_question").addClass("w-100");
+  $("#contact_question").addClass("w-100, btn-astra-gold");
   
   $("input.button.button-primary").addClass("w-100");
     
