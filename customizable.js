@@ -5,7 +5,7 @@ $( document ).ready(function() {
   $("#contact_phone").addClass("w-100");
   $("#contact_question").addClass("w-100");
   
-  $(".button .button-primary").addClass("w-100);
+  $("input.button.button-primary").addClass("w-100);
     
   myFunction(x) // Call listener function at run time
   x.addListener(myFunction) // Attach listener function on state changes
