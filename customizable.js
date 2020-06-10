@@ -1,3 +1,7 @@
+var fixed_column = document.querySelector("#fixed-column");
+
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- alert("MOBILE");
+  fixed_column.classList.remove("position-fixed");
+} else {
+  fixed_column.classList.add("position-fixed");
 }
