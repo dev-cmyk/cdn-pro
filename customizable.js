@@ -7,6 +7,8 @@ $( document ).ready(function() {
   
   $("input.button.button-primary").addClass("w-100 btn-astra-gold border-0");
     
+  $(".form-field-title").addClass("cu-font");
+    
   myFunction(x) // Call listener function at run time
   x.addListener(myFunction) // Attach listener function on state changes
   
