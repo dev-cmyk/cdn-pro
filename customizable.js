@@ -1,10 +1,8 @@
-var fixed_column = document.getElementById("fixed-column");
-
 function myFunction(x) {
   if (x.matches) { // If media query matches
-    fixed_column.classList.remove("position-fixed");
+    document.getElementById("fixed-column").classList.remove("position-fixed");
   } else {
-    fixed_column.classList.remove("position-fixed");
+    document.getElementById("fixed-column").classList.remove("position-fixed");
   }
 }
 
