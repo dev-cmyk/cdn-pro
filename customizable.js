@@ -1,4 +1,3 @@
-var fc = document.getElementById("fixed-column");
 var x = window.matchMedia("(max-width: 1024px)")
 
 $( document ).ready(function() {
@@ -12,8 +11,8 @@ $( document ).ready(function() {
 
 function myFunction(x) {
   if (x.matches) { // If media query matches
-    fc.classList.remove("position-fixed");
+    $("#fixed-column").removeClass("position-fixed");
   } else {
-    fc.classList.add("position-fixed");
+    $("#fixed-column").addClass("position-fixed");
   }
 }
