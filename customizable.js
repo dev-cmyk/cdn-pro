@@ -25,6 +25,7 @@ $( document ).ready(function() {
   
   if (window.location.href.indexOf("pool-table") > -1) {
       $("#pg_pool_table").removeClass("d-none");
+      $(".page-title").hide();
   }
     
 });
