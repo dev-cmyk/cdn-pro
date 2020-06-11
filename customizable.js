@@ -27,14 +27,14 @@ $( document ).ready(function() {
       $("#pg_pool_table").removeClass("d-none");
       $(".page-title").hide();
       $(".layout-module.collection-description.rte").hide();
-    $(".page-title-breadcrumbs").("w-100 text-left");
+    $(".page-title-breadcrumbs").addClass("w-100 text-left");
   }
   
   if (window.location.href.indexOf("accessories") > -1) {
       $("#pg_accessories").removeClass("d-none");
       $(".page-title").hide();
       $(".layout-module.collection-description.rte").hide();
-      $(".page-title-breadcrumbs").("w-100 text-left");
+      $(".page-title-breadcrumbs").addClass("w-100 text-left");
   }
   
 });
