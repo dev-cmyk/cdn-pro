@@ -33,12 +33,12 @@ $( document ).ready(function() {
       hideFromPageHeader()
   }
   
-  if (window.location.href.indexOf("pool-table-cloth") > -1) {
+  if (window.location.href.indexOf("table-cloth") > -1) {
       $("#pg_pool_table_cloth").removeClass("d-none");
       hideFromPageHeader()
   }
   
-  if (/brunswick-pool-tables/.test(window.location.href)) {
+  if (/brunswick-pool/.test(window.location.href)) {
       $("#pg_brunswick").removeClass("d-none");
       hideFromPageHeader()
   }
@@ -48,7 +48,7 @@ $( document ).ready(function() {
       hideFromPageHeader()
   }
   
-  if (window.location.href.indexOf("billiards-accessories") > -1) {
+  if (window.location.href.indexOf("billiards-acc") > -1) {
       $("#pg_billiards_accessories").removeClass("d-none");
       hideFromPageHeader()
   }
