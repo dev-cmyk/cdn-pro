@@ -22,8 +22,11 @@ $( document ).ready(function() {
     } 
   });
   }
-  
-  if (window.location.href.indexOf("pool-table") > -1) {
+
+  if (window.location.href.match(/(?:\b|_)brunswick-pool-tables(?:\b|_))) {
+      $("#pg_brunswick").removeClass("d-none");
+      hideFromPageHeader()
+  } else if (window.location.href.indexOf("pool-table") > -1) {
       $("#pg_pool_table").removeClass("d-none");
       hideFromPageHeader()
   } else if (window.location.href.indexOf("astrabilliard") > -1) {
@@ -31,9 +34,6 @@ $( document ).ready(function() {
       hideFromPageHeader()
   } else if (window.location.href.indexOf("pool-table-cloth") > -1) {
       $("#pg_pool_table_cloth").removeClass("d-none");
-      hideFromPageHeader()
-  } else if (/brunswick-pool-tables/.test(window.location.href)) {
-      $("#pg_brunswick").removeClass("d-none");
       hideFromPageHeader()
   }
   
