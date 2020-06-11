@@ -38,7 +38,7 @@ $( document ).ready(function() {
       hideFromPageHeader()
   }
   
-  if (window.location.href.indexOf("brunswick-pool-tables") > -1) {
+  if (/brunswick-pool-tables/.test(window.location.href)) {
       $("#pg_brunswick").removeClass("d-none");
       hideFromPageHeader()
   }
