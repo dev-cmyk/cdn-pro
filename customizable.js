@@ -23,7 +23,7 @@ $( document ).ready(function() {
   });
   }
 
-  if (location.href.match(/(?:\b|_)brunswick-pool-tables(?:\b|_))) {
+  if (location.href.match(/(?:\b|_)brunswick-pool-tables(?:\b|_))/) {
       $("#pg_brunswick").removeClass("d-none");
       hideFromPageHeader()
   } else if (window.location.href.indexOf("pool-table") > -1) {
