@@ -26,33 +26,27 @@ $( document ).ready(function() {
   if (location.href.match(/(?:\b|_)brunswick-pool-tables(?:\b|_)/)) {
       $("#pg_brunswick").removeClass("d-none");
       hideFromPageHeader()
-  } else if (window.location.href.indexOf("pool-table") > -1) {
+  } else if (location.href.match(/(?:\b|_)pool-table(?:\b|_)/)) {
       $("#pg_pool_table").removeClass("d-none");
       hideFromPageHeader()
-  } else if (window.location.href.indexOf("astrabilliard") > -1) {
+  } else if (location.href.match(/(?:\b|_)astrabilliard(?:\b|_)/)) {
       $("#pg_astra_billiards").removeClass("d-none");
       hideFromPageHeader()
-  } else if (window.location.href.indexOf("pool-table-cloth") > -1) {
+  } else if (location.href.match(/(?:\b|_)pool-table-cloth(?:\b|_)/)) {
       $("#pg_pool_table_cloth").removeClass("d-none");
       hideFromPageHeader()
   }
   
-  if (window.location.href.indexOf("accessories") > -1) {
+  if (location.href.match(/(?:\b|_)accessories(?:\b|_)/)) {
       $("#pg_accessories").removeClass("d-none");
       hideFromPageHeader()
-  }
-  
-  if (window.location.href.indexOf("billiards-acc") > -1) {
+  } else if (location.href.match(/(?:\b|_)billiards-accessories(?:\b|_)/)) {
       $("#pg_billiards_accessories").removeClass("d-none");
       hideFromPageHeader()
-  }
-  
-  if (window.location.href.indexOf("cue-racks") > -1) {
+  } else if (location.href.match(/(?:\b|_)cue-racks(?:\b|_)/)) {
       $("#pg_cue_racks").removeClass("d-none");
       hideFromPageHeader()
-  }
-  
-  if (window.location.href.indexOf("pool-cues") > -1) {
+  } else if (location.href.match(/(?:\b|_)pool-cues(?:\b|_)/)) {
       $("#pg_pool_cues").removeClass("d-none");
       hideFromPageHeader()
   }
