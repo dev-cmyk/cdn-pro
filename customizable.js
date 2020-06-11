@@ -3,9 +3,6 @@ var acc = document.getElementsByClassName("faq-accordion");
 var i;
 
 $( document ).ready(function() {
-    
-//   $("#contact_phone").addClass("w-100");
-//   $("#contact_question").addClass("w-100");
   
   $("input.button.button-primary").addClass("w-100 btn-astra-gold border-0");
     
@@ -24,6 +21,10 @@ $( document ).ready(function() {
       panel.style.maxHeight = panel.scrollHeight + "px";
     } 
   });
+  }
+  
+  if (window.location.href.indexOf("pool-table") > -1) {
+      $("#pg_pool_table").removeClass("d-none");
   }
     
 });
