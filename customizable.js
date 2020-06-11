@@ -28,7 +28,13 @@ $( document ).ready(function() {
       $(".page-title").hide();
       $(".layout-module.collection-description.rte").hide();
   }
-    
+  
+  if (window.location.href.indexOf("pool-table") > -1) {
+      $("#pg_accessories").removeClass("d-none");
+      $(".page-title").hide();
+      $(".layout-module.collection-description.rte").hide();
+  }
+  
 });
 
 function myFunction(x) {
