@@ -26,19 +26,13 @@ $( document ).ready(function() {
   if (window.location.href.indexOf("pool-table") > -1) {
       $("#pg_pool_table").removeClass("d-none");
       hideFromPageHeader()
-  }
-  
-   if (window.location.href.indexOf("astrabilliard") > -1) {
+  } else if (window.location.href.indexOf("astrabilliard") > -1) {
       $("#pg_astra_billiards").removeClass("d-none");
       hideFromPageHeader()
-  }
-  
-  if (window.location.href.indexOf("table-cloth") > -1) {
+  } else if (window.location.href.indexOf("pool-table-cloth") > -1) {
       $("#pg_pool_table_cloth").removeClass("d-none");
       hideFromPageHeader()
-  }
-  
-  if (/brunswick-pool/.test(window.location.href)) {
+  } else if (/brunswick-pool-tables/.test(window.location.href)) {
       $("#pg_brunswick").removeClass("d-none");
       hideFromPageHeader()
   }
