@@ -108,7 +108,7 @@ footer.footer {
 }
  */
 
-.shop-down {
+.shop-down:after {
  font-family: "Font Awesome 5 Free";
  content: "\f0dd";
 }
