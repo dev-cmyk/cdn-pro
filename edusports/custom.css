@@ -98,3 +98,7 @@ footer.footer {
   background-size: cover;
   margin-top: 36px;
 }
+
+.text__dark {
+  color: #323232 !important;
+}
