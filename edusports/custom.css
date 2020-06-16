@@ -112,3 +112,9 @@ footer.footer {
  font-family: "Font Awesome 5 Free";
  content: "\f0dd";
 }
+
+footer .socialLinks-item {
+ width: 32px !important;
+ height: 32px !important;
+ line-height: unset !important;
+}
