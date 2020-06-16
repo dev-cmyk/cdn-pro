@@ -107,3 +107,8 @@ footer.footer {
    fill: #323232 !important;
 }
  */
+
+.shop-down {
+ font-family: "Font Awesome 5 Free";
+ content: "\f0dd";
+}
