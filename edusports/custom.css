@@ -102,3 +102,7 @@ footer.footer {
 .text__dark {
   color: #323232 !important;
 }
+
+.cart-preview-close svg, .footer-info .socialLinks .icon svg, .footer-info .socialLinks .icon svg:hover, .footer-payment-icons svg, footer .icon svg {
+   fill: #323232 !important;
+}
