@@ -91,3 +91,9 @@ a.product-link {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.footer {
+background: url(https://cdn11.bigcommerce.com/s-7irtqj2wwk/product_images/uploaded_images/footer1-01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
