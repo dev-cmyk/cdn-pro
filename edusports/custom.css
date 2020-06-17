@@ -122,3 +122,7 @@ footer .socialLinks-item {
 .footer-info-phone > i.icon > svg {
     fill: #323232 !important;
 }
+
+input#search_query:hover, input#search_query:focus {
+  background: #f3f3f3;
+}
