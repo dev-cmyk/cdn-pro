@@ -124,5 +124,5 @@ footer .socialLinks-item {
 }
 
 input#search_query:hover, input#search_query:focus {
-  background: #f3f3f3;
+  background: #f3f3f3 !important;
 }
