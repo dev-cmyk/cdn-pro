@@ -118,3 +118,7 @@ footer .socialLinks-item {
  height: 32px !important;
  line-height: unset !important;
 }
+
+.footer-info-phone > i {
+    fill: #323232 !important;
+}
