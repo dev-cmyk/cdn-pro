@@ -26,7 +26,9 @@ padding: 0 !important;
 }
 
 .custom-accordion:after {
-  content: '\002B';
+/*   content: '\002B'; */
+  font-family: 'Font Awesome 5 Free';
+  content: '\f0d7';
   color: white;
   font-weight: bold;
   float: right;
