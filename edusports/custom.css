@@ -87,13 +87,13 @@ a.product-link {
 }
 
 .footer-newsletter {
-  background: url(https://cdn11.bigcommerce.com/s-7irtqj2wwk/product_images/uploaded_images/newsletter-01.png);
+  background: url(https://cdn11.bigcommerce.com/s-7irtqj2wwk/product_images/uploaded_images/newsletter-01.png) !important;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 footer.footer {
-  background: url('https://cdn11.bigcommerce.com/s-7irtqj2wwk/product_images/uploaded_images/footer1-01.png');
+  background: url('https://cdn11.bigcommerce.com/s-7irtqj2wwk/product_images/uploaded_images/footer1-01.png') !important;
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 36px;
