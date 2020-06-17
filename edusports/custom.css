@@ -119,6 +119,6 @@ footer .socialLinks-item {
  line-height: unset !important;
 }
 
-.footer-info-phone > i {
+.footer-info-phone > i.icon > svg {
     fill: #323232 !important;
 }
