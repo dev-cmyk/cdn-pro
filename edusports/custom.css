@@ -27,7 +27,7 @@ padding: 0 !important;
 
 .custom-accordion:after {
   content: '\002B';
-  color: #777;
+  color: white;
   font-weight: bold;
   float: right;
   margin-left: 5px;
