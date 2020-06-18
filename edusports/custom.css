@@ -15,6 +15,7 @@ padding: 0 !important;
 
 .barlow-condensed {
 	font-family: 'Barlow Condensed', sans-serif !important;
+	letter-spacing: 1.5px;
 }
 
 .custom-accordion {
