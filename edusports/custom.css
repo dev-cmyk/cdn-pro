@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 [data-sub-layout="44172840-2e4e-4cb2-8922-92b3a82ebf3e"] {
 padding: 0 !important;
 }
@@ -99,6 +106,11 @@ a.product-link {
 .bd-top-img-radius {
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: -webkit-transform .5s ease;
+    -o-transition: transform .5s ease;
+    transition: transform .5s ease;
+    transition: transform .5s ease, -webkit-transform .5s ease;
 }
 
 .bd-bottom-radius {
@@ -106,6 +118,12 @@ a.product-link {
     border-bottom-right-radius: 14px;
     -webkit-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
             box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+}
+
+.bd-top-img-radius:hover {
+    -webkit-transform: scale(0.9);
+        -ms-transform: scale(0.9);
+            transform: scale(0.9);
 }
 
 .text__dark {
