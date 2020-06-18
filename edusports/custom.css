@@ -177,6 +177,6 @@ li.product {
 }
 
 .ff-roboto {
-	font-family: "Roboto";
+	font-family: "Roboto" !important;
 }
 	
