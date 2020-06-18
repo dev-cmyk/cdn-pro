@@ -184,3 +184,6 @@ li.product {
 	text-decoration: none !important;	
 }
 	
+.bg-custom-warning {
+	background-color: #fbd126 !important;
+}
