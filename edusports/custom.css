@@ -175,3 +175,8 @@ input#search_query:hover, input#search_query:focus {
 li.product {
 	margin-bottom: 48px !important;
 }
+
+.ff-roboto {
+	font-family: "Roboto";
+}
+	
