@@ -83,6 +83,11 @@ a.product-link {
     box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }
 
+.bd-top-img-radius {
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
 .bd-bottom-radius {
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
