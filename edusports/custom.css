@@ -172,6 +172,6 @@ input#search_query:hover, input#search_query:focus {
 	border-radius: 5px !important;	
 )
 
-.product {
+.brandGrid .brand, .productGrid .product {
 	margin-bottom: 48px !important;
 }
