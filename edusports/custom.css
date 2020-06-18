@@ -16,13 +16,18 @@ padding: 0 !important;
   text-align: left;
   outline: none;
   font-size: 15px;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
   transition: 0.4s;
 }
 
 .custom-active, .custom-accordion:hover {
   background-color: #b5d1e6;
-  transform: scale(1.05);
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+          box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
 }
 
 .custom-accordion:after {
@@ -44,6 +49,8 @@ padding: 0 !important;
   background-color: white;
   max-height: 0;
   overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  -o-transition: max-height 0.2s ease-out;
   transition: max-height 0.2s ease-out;
 }
 
@@ -53,6 +60,8 @@ a.product-link {
 }
 
 .product-link-container {
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
@@ -61,8 +70,12 @@ a.product-link {
 }
 
 .v-centered {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 .card .card-body {
@@ -80,7 +93,8 @@ a.product-link {
 .bd-top-radius {
     border-top-left-radius: 14px;
     border-top-right-radius: 14px;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    -webkit-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }
 
 .bd-top-img-radius {
@@ -91,7 +105,8 @@ a.product-link {
 .bd-bottom-radius {
     border-bottom-left-radius: 14px;
     border-bottom-right-radius: 14px;
-    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    -webkit-box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+            box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
 }
 
 .footer-newsletter {
@@ -133,4 +148,21 @@ footer .socialLinks-item {
 
 input#search_query:hover, input#search_query:focus {
   background: #f3f3f3 !important;
+}
+
+.btn-custom-outline-primary { 
+	color: #0E66A0 !important;
+    	border: 1px solid #0E66A0;
+	text-transform: uppercase;
+	font-family: "Roboto";
+}
+
+.btn-custom-primary {
+	color: #fff;
+	background: -o-linear-gradient(23.34deg, #0E66A0 0%, #2495B3 100%);
+	background: linear-gradient(66.66deg, #0E66A0 0%, #2495B3 100%);
+	-webkit-box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(14, 102, 160, 0.12), 0px 16px 24px rgba(14, 102, 160, 0.2);
+	        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(14, 102, 160, 0.12), 0px 16px 24px rgba(14, 102, 160, 0.2);
+	font-family: "Roboto";
+	text-transform: uppercase;
 }
