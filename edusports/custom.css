@@ -14,7 +14,7 @@ padding: 0 !important;
 }
 
 .barlow-condensed {
-	font-family: 'Barlow Condensed', sans-serif;
+	font-family: 'Barlow Condensed', sans-serif !important;
 }
 
 .custom-accordion {
