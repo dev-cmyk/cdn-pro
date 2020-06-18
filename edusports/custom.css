@@ -171,3 +171,7 @@ input#search_query:hover, input#search_query:focus {
 .custom-border-radius {
 	border-radius: 5px !important;	
 )
+
+.product {
+	margin-bottom: 48px !important;
+}
