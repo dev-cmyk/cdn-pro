@@ -152,7 +152,7 @@ input#search_query:hover, input#search_query:focus {
 
 .btn-custom-outline-primary { 
 	color: #0E66A0 !important;
-    	border: 1px solid #0E66A0;
+    	border: 1px solid #0E66A0 !important;
 	text-transform: uppercase;
 	font-family: "Roboto";
 }
