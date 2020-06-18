@@ -167,3 +167,7 @@ input#search_query:hover, input#search_query:focus {
 	text-transform: uppercase;
 	border-radius: 5px !important;
 }
+
+.custom-border-radius {
+	border-radius: 5px !important;	
+)
