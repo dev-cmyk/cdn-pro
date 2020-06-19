@@ -163,7 +163,7 @@ footer .socialLinks-item {
 }
 
 .footer-info-phone > i.icon > svg {
-    fill: #323232 !important;
+    fill: #323232;
 }
 
 input#search_query:hover, input#search_query:focus {
