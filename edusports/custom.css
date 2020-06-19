@@ -198,7 +198,7 @@ li.product {
 	background-color: #fbd126 !important;
 }
 
-.anchor{
+a.anchor{
   display: block;
   height: 115px; /*same height as header*/
   margin-top: -115px; /*same height as header*/
