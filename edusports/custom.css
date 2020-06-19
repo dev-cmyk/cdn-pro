@@ -19,8 +19,10 @@ padding: 0 !important;
 }
 
 .custom-accordion {
-  background: -o-linear-gradient(23.34deg, #0E66A0 0%, #2495B3 100%);
-  background: linear-gradient(66.66deg, #0E66A0 0%, #2495B3 100%);
+/*   background: -o-linear-gradient(23.34deg, #0E66A0 0%, #2495B3 100%);
+  background: linear-gradient(66.66deg, #0E66A0 0%, #2495B3 100%); */
+  background: -o-linear-gradient(90deg, #20CEB9 0%, #0FDE8F 51.14%, #00843D 97.4%);
+  background: linear-gradient(90deg, #20CEB9 0%, #0FDE8F 51.14%, #00843D 97.4%);
   color: #444;
   cursor: pointer;
   padding: 18px;
