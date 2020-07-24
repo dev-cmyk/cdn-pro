@@ -42,7 +42,7 @@ var fibreglassWindowTypeIsNotEmpty = false;
 
 var state = {};
 
-$(document).ready(function () {
+jQuery(function ($) {
 
     fittingLocation();
 
