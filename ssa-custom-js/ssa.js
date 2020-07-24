@@ -44,8 +44,6 @@ var state = {};
 
 jQuery(function ($) {
 
-    fittingLocation();
-
     $(window).keydown(function (event) {
         if (event.keyCode == 13) {
             event.preventDefault();
@@ -713,44 +711,6 @@ jQuery(function ($) {
 
 
 });
-
-
-/*** Fitting Location ***/
-function fittingLocation() {
-    $("#fitting_location").change(function () {
-        if ((this.value === "Boronia, VIC 3155") || ($(this).val() === "Dandenong, VIC 3175") || ($(this).val() === "Laverton, VIC 3026") || ($(this).val() === "Northgate, QLD 4013")) {
-            $("#dual-battery-system-input-1").parent().removeClass("text-disabled");
-            $("#dual-battery-system-input-1").attr("disabled", false);
-            $("#bluemax-suspension-card-input-6").parent().removeClass("text-disabled");
-            $("#bluemax-suspension-card-input-6").attr("disabled", false);
-            $("#snorkel-card-input-7").parent().removeClass("text-disabled");
-            $("#snorkel-card-input-7").attr("disabled", false);
-            $("#diff-breathers-card-input-8").parent().removeClass("text-disabled");
-            $("#diff-breathers-card-input-8").attr("disabled", false);
-            $("#driving-lights-card-input-9").parent().removeClass("text-disabled");
-            $("#driving-lights-card-input-9").attr("disabled", false);
-            $("#gme-uhf-radio-card-input-10").parent().removeClass("text-disabled");
-            $("#gme-uhf-radio-card-input-10").attr("disabled", false);
-            $("#redarc-tow-pro-elite-card-input-11").parent().removeClass("text-disabled");
-            $("#redarc-tow-pro-elite-card-input-11").attr("disabled", false);
-        } else {
-            $("#dual-battery-system-input-1").parent().addClass("text-disabled");
-            $("#dual-battery-system-input-1").attr("disabled", true);
-            $("#bluemax-suspension-card-input-6").parent().addClass("text-disabled");
-            $("#bluemax-suspension-card-input-6").attr("disabled", true);
-            $("#snorkel-card-input-7").parent().addClass("text-disabled");
-            $("#snorkel-card-input-7").attr("disabled", true);
-            $("#diff-breathers-card-input-8").parent().addClass("text-disabled");
-            $("#diff-breathers-card-input-8").attr("disabled", true);
-            $("#driving-lights-card-input-9").parent().addClass("text-disabled");
-            $("#driving-lights-card-input-9").attr("disabled", true);
-            $("#gme-uhf-radio-card-input-10").parent().addClass("text-disabled");
-            $("#gme-uhf-radio-card-input-10").attr("disabled", true);
-            $("#redarc-tow-pro-elite-card-input-11").parent().addClass("text-disabled");
-            $("#redarc-tow-pro-elite-card-input-11").attr("disabled", true);
-        }
-    });
-}
 
 /*** PRODUCT SELECTION ***/
 function productSelection() {
