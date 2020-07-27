@@ -42,7 +42,8 @@ var fibreglassWindowTypeIsNotEmpty = false;
 
 var state = {};
 
-jQuery(function (jQuery) {
+$.noConflict();
+jQuery(function ($) {
 
     jQuery(window).keydown(function (event) {
         if (event.keyCode == 13) {
