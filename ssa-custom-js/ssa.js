@@ -42,163 +42,161 @@ var fibreglassWindowTypeIsNotEmpty = false;
 
 var state = {};
 
-jQuery(function ($) {
+jQuery(function (jQuery) {
 
-    fittingLocation();
-
-    $(window).keydown(function (event) {
+    jQuery(window).keydown(function (event) {
         if (event.keyCode == 13) {
             event.preventDefault();
             return false;
         }
     });
 
-    if ($(window).width() < 768) {
-        $("#div-slick-container").removeClass("mi-slick-this");
-        $("#tacc-container").hide();
+    if (jQuery(window).width() < 768) {
+        jQuery("#div-slick-container").removeClass("mi-slick-this");
+        jQuery("#tacc-container").hide();
     } else {
-        $("#div-slick-container").addClass("mi-slick-this");
+        jQuery("#div-slick-container").addClass("mi-slick-this");
     }
 
-    $('#personal_and_vehicle_information_fieldset input').prop('required', true);
-    $('#date_time_fieldset input').prop('required', true);
+    jQuery('#personal_info input').prop('required', true);
+    jQuery('#date_time_fieldset input').prop('required', true);
 
-    $('#tswitch').click(function(){
-        if($(this).prop("checked") == true){
-            $("#tacc-container").show();
+    jQuery('#tswitch').click(function(){
+        if(jQuery(this).prop("checked") == true){
+            jQuery("#tacc-container").show();
         }
-        else if($(this).prop("checked") == false){
-            $("#tacc-container").hide();
+        else if(jQuery(this).prop("checked") == false){
+            jQuery("#tacc-container").hide();
         }
     });
 
     /*** HIDE CARDS ***/
-    $("#bs_personal_information_and_vehicle_information_card").hide();
-    $("#bs_steel_tray_card").hide();
-    $("#bs_aluminium_tray_card").hide();
-    $("#bs_fibreglass_tray_card").hide();
+    jQuery("#bs_personal_information_and_vehicle_information_card").hide();
+    jQuery("#bs_steel_tray_card").hide();
+    jQuery("#bs_aluminium_tray_card").hide();
+    jQuery("#bs_fibreglass_tray_card").hide();
 
 
     /*** HIDE ACCESSORIES ***/
-    $("#tray_accessories").hide();
-    $("#fibreglass_accessories").hide();
+    jQuery("#tray_accessories").hide();
+    jQuery("#fibreglass_accessories").hide();
 
 
     /*** HIDE FIBREGLASS CANOPY DECKTYPE ***/
-    $("#fibreglass_decktype_container").hide();
-    $("#input_painted_field_container").hide();
+    jQuery("#fibreglass_decktype_container").hide();
+    jQuery("#input_painted_field_container").hide();
 
     /*** HIDE PRICE PANEL ***/
-    $("#bs_price_panel").hide();
+    jQuery("#bs_price_panel").hide();
 
 
     /*** OPTIONAL EXTRAS SLICK SLIDER ***/
     cSlick();
 
-    $('.steel-slider').slick({
+    jQuery('.steel-slider').slick({
         infinite: true,
         autoplay: true,
         arrows: false,
         dots: true,
         onInit: function() {
-            $('.current').text('1');
+            jQuery('.current').text('1');
         },
         onAfterChange: function() {
-            $('.current').text($('.slides').slickCurrentSlide()+1);
+            jQuery('.current').text(jQuery('.slides').slickCurrentSlide()+1);
         }
     });
 
-    $('.aluminium-slider').slick({
+    jQuery('.aluminium-slider').slick({
         infinite: true,
         autoplay: true,
         arrows: false,
         dots: true,
         onInit: function() {
-            $('.current').text('1');
+            jQuery('.current').text('1');
         },
         onAfterChange: function() {
-            $('.current').text($('.slides').slickCurrentSlide()+1);
+            jQuery('.current').text(jQuery('.slides').slickCurrentSlide()+1);
         }
     });
 
-    $('.fibreglass-slider').slick({
+    jQuery('.fibreglass-slider').slick({
         infinite: true,
         autoplay: true,
         arrows: false,
         dots: true,
         onInit: function() {
-            $('.current').text('1');
+            jQuery('.current').text('1');
         },
         onAfterChange: function() {
-            $('.current').text($('.slides').slickCurrentSlide()+1);
+            jQuery('.current').text(jQuery('.slides').slickCurrentSlide()+1);
         }
     });
 
-    $("#fitting_location").prop("required", true);
+    jQuery("#fitting_location").prop("required", true);
 
-    $('#fbg-color-link').click(function() {
-        $(".fbg-modal").slideDown("fast");
+    jQuery('#fbg-color-link').click(function() {
+        jQuery(".fbg-modal").slideDown("fast");
     });
 
-    $('#fbg-modal-color').click(function() {
-        $(this).slideUp("fast");
+    jQuery('#fbg-modal-color').click(function() {
+        jQuery(this).slideUp("fast");
     });
 
-    $("#booking_location").change(function () {
+    jQuery("#slct-booking-location").change(function () {
         fittingLocationChanged = true;
         productSelection();
         refreshSlick();
     });
 
     //STEEL UTE TRAY
-    $("input[name='steel_tray_color']").click(function () {
+    jQuery("input[name='steel_tray_color']").click(function () {
         enableBlockRadio();
     });
-    $("#steel_tray_size").click(function () {
+    jQuery("#steel-tray-size").click(function () {
         enableBlockRadio();
     });
-    $("#sclt_tub_removal").click(function () {
+    jQuery("#steel-tub-removal").click(function () {
         enableBlockRadio();
     });
-    $("#slct_tail_light").click(function () {
+    jQuery("#steel-tail-lights").click(function () {
         enableBlockRadio();
     });
-    $("input[name='steel_drivetrain']").click(function () {
+    jQuery("input[name='steel_drivetrain']").click(function () {
         enableBlockRadio();
     });
     //ALUMINIUm UTE TRAY
-    $("input[name='aluminium_tray_color']").click(function () {
+    jQuery("input[name='aluminium_tray_color']").click(function () {
         enableBlockRadio();
     });
-    $("#slct_tray_size_pat").click(function () {
+    jQuery("#aluminium-tray-size").click(function () {
         enableBlockRadio();
     });
-    $("#sclt_tub_removal").click(function () {
+    jQuery("#steel-tub-removal").click(function () {
         enableBlockRadio();
     });
-    $("#slct_tail_light-premium").click(function () {
+    jQuery("#steel-tail-lights-premium").click(function () {
         enableBlockRadio();
     });
-    $("input[name='aluminium_drivetrain']").click(function () {
+    jQuery("input[name='aluminium_drivetrain']").click(function () {
         enableBlockRadio();
     });
     //FIBREGLASS CANOPY
-    $("input[name='deck_type']").click(function () {
+    jQuery("input[name='deck_type']").click(function () {
         enableBlockRadio();
     });
-    $("#slct_fiberglass_window_type").click(function () {
+    jQuery("#slct_fiberglass_window_type").click(function () {
         enableBlockRadio();
     });
-    $("input[name='canopy_color']").click(function () {
+    jQuery("input[name='canopy_color']").click(function () {
         enableBlockRadio();
     });
 
-    $('.blockradio').click(function () {
-        var getRadio = $(this).text();
+    jQuery('.blockradio').click(function () {
+        var getRadio = jQuery(this).text();
         openWarningPrompt();
 
-        $("#warning_confirm").click(function () {
-            $('input[name="quote_product"][value="' + getRadio + '"]').prop('checked', true);
+        jQuery("#warning_confirm").click(function () {
+            jQuery('input[name="quote_product"][value="' + getRadio + '"]').prop('checked', true);
             resetTrayForms();
             traySizeChecker();
             inputIsFilled();
@@ -206,32 +204,32 @@ jQuery(function ($) {
             openTrayCard();
             closeCard();
             productSelection();
-            $('.blockradio').addClass('d-none').removeClass('d-block');
+            jQuery('.blockradio').addClass('d-none').removeClass('d-block');
 
-            disableHiddenFields("bs_steel_tray_card", "steel_tray_fieldset");
-            disableHiddenFields("bs_aluminium_tray_card", "aluminium_tray_fieldset");
-            disableHiddenFields("bs_fibreglass_tray_card", "fibreglass_canopy_fieldset");
+            disableHiddenFields("bs_steel_tray_card", "form-steel-tray");
+            disableHiddenFields("bs_aluminium_tray_card", "form-aluminium-tray");
+            disableHiddenFields("bs_fibreglass_tray_card", "form-fibreglass-canopy");
 
-            $("#steel_tray_fieldset, #aluminium_tray_fieldset, #fibreglass_canopy_fieldset, #tray_accessories_fieldset, #fibreglass_canopy_accessory_fieldset").removeAttr('disabled');
-            $('#btn_view_price').show();
-            $('#bs_price_panel').slideUp();
-            $('#div-calendar').hide();
-            $('#div-accessories').empty();
-            $('#proceed-btn').css('display', 'block');
+            jQuery("#form-steel-tray, #form-aluminium-tray, #form-fibreglass-canopy, #form-tray-accessories, #fibreglass_canopy_accessory_fieldset").removeAttr('disabled');
+            jQuery('#btn_view_price').show();
+            jQuery('#bs_price_panel').slideUp();
+            jQuery('#div-calendar').hide();
+            jQuery('#div-accessories').empty();
+            jQuery('#proceed-btn').css('display', 'block');
 
             refreshSlick();
         });
 
-        $("#warning_cancel").click(function () {
+        jQuery("#warning_cancel").click(function () {
             closeWarningPrompt();
         });
     });
 
-    $("input[name='steel-tray-accessories[]']").click(function () {
+    jQuery("input[name='steel-tray-accessories[]']").click(function () {
         traySizeIsFilled = false;
         // Define variable for checkbox id
-        var targetId = $(this).data('target-id');
-        var isStandalone = $(this).data('standalone');
+        var targetId = jQuery(this).data('target-id');
+        var isStandalone = jQuery(this).data('standalone');
         
         // Check if checkbox has been added to the state object
         if (!state.hasOwnProperty(targetId)) {
@@ -242,18 +240,18 @@ jQuery(function ($) {
         
         // Update true/false on the state object
         // ex: isChecked: true
-        state[targetId].isChecked = $(this).is(':checked');
+        state[targetId].isChecked = jQuery(this).is(':checked');
         state[targetId].isStandalone = !!isStandalone;
         
         // Function for checking and updating span#text
         traySizeChecker();
         console.log("traySizeChecker: " + traySizeIsFilled);
 
-        var chkds = $("input[name='steel-tray-accessories[]']:checkbox");
+        var chkds = jQuery("input[name='steel-tray-accessories[]']:checkbox");
 
         setTimeout(function () {
 
-            if (chkds.is(":checked") && (!$('select[id^="size-"]').is(":visible"))) {
+            if (chkds.is(":checked") && (!jQuery('select[id^="size-"]').is(":visible"))) {
 
                 extrasWithNoSizeIsSelected = true;
                 extrasWithSizeIsSelected = false;
@@ -261,7 +259,7 @@ jQuery(function ($) {
                 traySizeIsFilled = false;
 
 
-            } else if (chkds.is(":checked") && ($('select[id^="size-"]').is(":visible"))) {
+            } else if (chkds.is(":checked") && (jQuery('select[id^="size-"]').is(":visible"))) {
 
                 extrasWithNoSizeIsSelected = false;
                 extrasWithSizeIsSelected = true;
@@ -285,10 +283,10 @@ jQuery(function ($) {
 
     });
 
-    $('select[id^="size-"]').change(function() {
+    jQuery('select[id^="size-"]').change(function() {
 
         // Define variable for checkbox id
-        var targetId = $(this).data('target-id');
+        var targetId = jQuery(this).data('target-id');
         
         // Check if dropdown value has been added to the state object
         if (!state.hasOwnProperty(targetId)) {
@@ -297,7 +295,7 @@ jQuery(function ($) {
         
         // Update value on the state object
         // ex: selectedValue: "2"
-        state[targetId].selectedValue = $(this).val();
+        state[targetId].selectedValue = jQuery(this).val();
         
         // Function for checking and updating span#text
         traySizeChecker();
@@ -306,13 +304,13 @@ jQuery(function ($) {
 
     });
 
-    $("input[name='installation']").click(function () {
+    jQuery("input[name='installation']").click(function () {
 
-        if ($("#radioo1").prop("checked")) {
+        if (jQuery("#rdo-installation").prop("checked")) {
             installationAtPiranhaBranchIsSelected = true;
             diyIsSelected = false;
             disableViewPrice();
-        } else if ($("#radioo2").prop("checked")) {
+        } else if (jQuery("#rdo-diy").prop("checked")) {
             installationAtPiranhaBranchIsSelected = false;
             diyIsSelected = true;
             disableViewPrice();
@@ -323,9 +321,9 @@ jQuery(function ($) {
     });
 
     /*** FIBREGLASS CANOPY COLOR ***/
-    $("input[name='canopy_color']").click(function () {
+    jQuery("input[name='canopy_color']").click(function () {
 
-        if (($('#radio_fibreglass_primered').is(':checked')) || ($('#radio_fibreglass_painted').is(':checked'))) {
+        if ((jQuery('#radio_fibreglass_primered').is(':checked')) || (jQuery('#radio_fibreglass_painted').is(':checked'))) {
 
             fibreglassCanopyColorIsChecked = true;
 
@@ -340,15 +338,15 @@ jQuery(function ($) {
     });
 
     /*** STEEL TRAY COLOR RADIO ***/
-    $("input[name='steel_tray_color']").click(function () {
+    jQuery("input[name='steel_tray_color']").click(function () {
 
         /*** STEEL TRAY COLOR RADIO ***/
-        if (($('#steel_tray_color_black').is(':checked')) || ($('#steel_tray_color_white').is(':checked'))) {
+        if ((jQuery('#rdo-steel-black').is(':checked')) || (jQuery('#rdo-steel-white').is(':checked'))) {
 
-            $("#steel_tray_color_black").next().removeClass("custom-error");
-            $("#steel_tray_color_white").next().removeClass("custom-error");
-            $("#steel_tray_color_heading").removeClass("text-danger");
-            $("#steel_tray_color_validator").hide();
+            jQuery("#rdo-steel-black").next().removeClass("custom-error");
+            jQuery("#rdo-steel-white").next().removeClass("custom-error");
+            jQuery("#steel_tray_color_heading").removeClass("text-danger");
+            jQuery("#steel_tray_color_validator").hide();
 
             steelTrayColorIsChecked = true;
 
@@ -363,15 +361,15 @@ jQuery(function ($) {
     });
 
     /*** ALUMINIUM TRAY COLOR RADIO ***/
-    $("input[name='aluminium_tray_color']").click(function () {
+    jQuery("input[name='aluminium_tray_color']").click(function () {
 
         /*** ALUMINIUM TRAY COLOR RADIO ***/
-        if (($('#aluminium_tray_color_mill_finish').is(':checked')) || ($('#aluminium_tray_color_black').is(':checked'))) {
+        if ((jQuery('#rdo-aluminium-black').is(':checked')) || (jQuery('#rdo-aluminium-mill').is(':checked'))) {
 
-            $("#aluminium_tray_color_mill_finish").next().removeClass("custom-error");
-            $("#aluminium_tray_color_black").next().removeClass("custom-error");
-            $("#aluminium_tray_color_heading").removeClass("text-danger");
-            $("#aluminium_tray_color_validator").hide();
+            jQuery("#rdo-aluminium-black").next().removeClass("custom-error");
+            jQuery("#rdo-aluminium-mill").next().removeClass("custom-error");
+            jQuery("#aluminium_tray_color_heading").removeClass("text-danger");
+            jQuery("#aluminium_tray_color_validator").hide();
 
             aluminiumTrayColorIsChecked = true;
 
@@ -386,19 +384,19 @@ jQuery(function ($) {
     });
 
     /*** STEEL TRAY DRIVETRAIN IS CHECKED ***/
-    $("input[name='steel_drivetrain']").click(function () {
+    jQuery("input[name='steel_drivetrain']").click(function () {
 
         /*** STEEL TRAY DRIVETRAIN IS CHECKED ***/
-        if (($('#steel_rdo_2wd').is(':checked')) || ($('#steel_rdo_4wd').is(':checked'))) {
+        if ((jQuery('#rdo-steel-2wd').is(':checked')) || (jQuery('#rdo-steel-4wd').is(':checked'))) {
 
-            $("#steel_tray_drivetrain_heading").removeClass("text-danger");
-            $("#steel_tray_drivetrain_validator").hide();
+            jQuery("#steel_tray_drivetrain_heading").removeClass("text-danger");
+            jQuery("#steel_tray_drivetrain_validator").hide();
 
-            $("#steel_rdo_2wd").removeClass("custom-radio-error");
-            $("#steel_rdo_2wd").next().removeClass("text-danger");
+            jQuery("#rdo-steel-2wd").removeClass("custom-radio-error");
+            jQuery("#rdo-steel-2wd").next().removeClass("text-danger");
 
-            $("#steel_rdo_4wd").removeClass("custom-radio-error");
-            $("#steel_rdo_4wd").next().removeClass("text-danger");
+            jQuery("#rdo-steel-4wd").removeClass("custom-radio-error");
+            jQuery("#rdo-steel-4wd").next().removeClass("text-danger");
 
             steelDriveTrainIsChecked = true;
 
@@ -413,19 +411,19 @@ jQuery(function ($) {
     });
 
     /*** ALUMINIUM TRAY DRIVETRAIN IS CHECKED ***/
-    $("input[name='aluminium_drivetrain']").click(function () {
+    jQuery("input[name='aluminium_drivetrain']").click(function () {
 
         /*** ALUMINIUM TRAY DRIVETRAIN IS CHECKED ***/
-        if (($('#premium_rdo_2wd').is(':checked')) || ($('#premium_rdo_4wd').is(':checked'))) {
+        if ((jQuery('#rdo-aluminium-2wd').is(':checked')) || (jQuery('#rdo-aluminium-4wd').is(':checked'))) {
 
-            $("#aluminium_tray_drivetrain_container").removeClass("text-danger");
-            $("#aluminium_tray_drivetrain_validator").hide();
+            jQuery("#aluminium_tray_drivetrain_container").removeClass("text-danger");
+            jQuery("#aluminium_tray_drivetrain_validator").hide();
 
-            $("#premium_rdo_2wd").removeClass("custom-radio-error");
-            $("#premium_rdo_2wd").next().removeClass("text-danger");
+            jQuery("#rdo-aluminium-2wd").removeClass("custom-radio-error");
+            jQuery("#rdo-aluminium-2wd").next().removeClass("text-danger");
 
-            $("#premium_rdo_4wd").removeClass("custom-radio-error");
-            $("#premium_rdo_4wd").next().removeClass("text-danger");
+            jQuery("#rdo-aluminium-4wd").removeClass("custom-radio-error");
+            jQuery("#rdo-aluminium-4wd").next().removeClass("text-danger");
 
             aluminiumDriveTrainIsChecked = true;
 
@@ -439,24 +437,24 @@ jQuery(function ($) {
 
     });
 
-    $("input[type='radio']").click(function () {
+    jQuery("input[type='radio']").click(function () {
 
         /*** PRODUCT SELECTION ***/
         productSelection();
 
         /*** FIBREGLASS CANOPY PAINT INPUT FIELD ***/
-        $("#radio_fibreglass_painted").prop("checked") ? $("#input_painted_field_container").show() : $("#input_painted_field_container").hide();
+        jQuery("#radio_fibreglass_painted").prop("checked") ? jQuery("#input_painted_field_container").show() : jQuery("#input_painted_field_container").hide();
 
-        if ($("#vengine-petrol").prop("checked") || $("#vengine-diesel").prop("checked")) {
+        if (jQuery("#rdo-petrol").prop("checked") || jQuery("#rdo-diesel").prop("checked")) {
 
-            $("#engine_heading").removeClass("text-danger");
-            $("#engine_radio_validator").hide();
+            jQuery("#engine_heading").removeClass("text-danger");
+            jQuery("#engine_radio_validator").hide();
 
-            $("#vengine-petrol").removeClass("custom-radio-error");
-            $("#vengine-petrol").next().removeClass("text-danger");
+            jQuery("#rdo-petrol").removeClass("custom-radio-error");
+            jQuery("#rdo-petrol").next().removeClass("text-danger");
 
-            $("#vengine-diesel").removeClass("custom-radio-error");
-            $("#vengine-diesel").next().removeClass("text-danger");
+            jQuery("#rdo-diesel").removeClass("custom-radio-error");
+            jQuery("#rdo-diesel").next().removeClass("text-danger");
 
             engineIsChecked = true;
 
@@ -471,50 +469,50 @@ jQuery(function ($) {
     });
 
 
-    $("#btn_view_price").click(function () {
+    jQuery("#btn_view_price").click(function () {
 
         checkField("first_name");
         checkField("last_name");
-        checkField("customer_email");
+        checkField("c_email");
         checkField("c_phone");
         checkField("c_postcode");
-        checkField("input_vehicle_year");
+        checkField("v_year");
 
-        dropDownSelect("slct_vmake");
-        dropDownSelect("slct_vmodel");
+        dropDownSelect("v_make");
+        dropDownSelect("v_model");
 
     });
 
 
     onInputFocusOut("first_name");
     onInputFocusOut("last_name");
-    onInputFocusOut("customer_email");
+    onInputFocusOut("c_email");
     onInputFocusOut("c_phone");
     onInputFocusOut("c_postcode");
-    onInputFocusOut("input_vehicle_year");
+    onInputFocusOut("v_year");
 
-    dropDownOnChangedEvent("slct_vmake");
-    dropDownOnChangedEvent("slct_vmodel");
+    dropDownOnChangedEvent("v_make");
+    dropDownOnChangedEvent("v_model");
 
     /*** STEEL TRAY ***/
-    dropDownOnChangedEvent("steel_tray_size");
-    dropDownOnChangedEvent("sclt_tub_removal");
-    dropDownOnChangedEvent("slct_tail_light");
+    dropDownOnChangedEvent("steel-tray-size");
+    dropDownOnChangedEvent("steel-tub-removal");
+    dropDownOnChangedEvent("steel-tail-lights");
 
     /*** ALUMINIUM TRAY ***/
-    dropDownOnChangedEvent("slct_tray_size_pat");
-    dropDownOnChangedEvent("sclt_tub_removal-premium");
-    dropDownOnChangedEvent("slct_tail_light-premium");
+    dropDownOnChangedEvent("aluminium-tray-size");
+    dropDownOnChangedEvent("steel-tub-removal-premium");
+    dropDownOnChangedEvent("steel-tail-lights-premium");
 
     /*** DISABLE HIDDEN FIELDS ***/
-    disableHiddenFields("bs_steel_tray_card", "steel_tray_fieldset");
-    disableHiddenFields("bs_aluminium_tray_card", "aluminium_tray_fieldset");
-    disableHiddenFields("bs_fibreglass_tray_card", "fibreglass_canopy_fieldset");
+    disableHiddenFields("bs_steel_tray_card", "form-steel-tray");
+    disableHiddenFields("bs_aluminium_tray_card", "form-aluminium-tray");
+    disableHiddenFields("bs_fibreglass_tray_card", "form-fibreglass-canopy");
 
 
-    $("input[type='text']").blur(function () {
+    jQuery("input[type='text']").blur(function () {
 
-        if (($("#first_name").val() != "") && ($("#last_name").val() != "")) {
+        if ((jQuery("#first_name").val() != "") && (jQuery("#last_name").val() != "")) {
 
             textFieldIsNotEmpty = true;
 
@@ -528,9 +526,9 @@ jQuery(function ($) {
 
     });
 
-    $("input[type='number']").blur(function () {
+    jQuery("input[type='number']").blur(function () {
 
-        if (($("#c_phone").val() != "") && ($("#c_postcode").val() != "") && ($("#input_vehicle_year").val() != "")) {
+        if ((jQuery("#c_phone").val() != "") && (jQuery("#c_postcode").val() != "") && (jQuery("#v_year").val() != "")) {
 
             numberFieldIsNotEmpty = true;
 
@@ -544,9 +542,9 @@ jQuery(function ($) {
 
     });
 
-    $("input[type='email']").blur(function () {
+    jQuery("input[type='email']").blur(function () {
 
-        if (($("#customer_email").val() != "")) {
+        if ((jQuery("#c_email").val() != "")) {
 
             emailFieldIsNotEmpty = true;
 
@@ -560,9 +558,9 @@ jQuery(function ($) {
 
     });
 
-    $("#slct_vmake").change(function () {
+    jQuery("#v_make").change(function () {
 
-        if ($("#slct_vmake option:selected").val() === "") {
+        if (jQuery("#v_make option:selected").val() === "") {
 
             vmakeIsNotEmpty = false;
 
@@ -576,9 +574,9 @@ jQuery(function ($) {
 
     });
 
-    $("#slct_vmodel").change(function () {
+    jQuery("#v_model").change(function () {
 
-        if ($("#slct_vmodel option:selected").val() === "") {
+        if (jQuery("#v_model option:selected").val() === "") {
 
             vmodelIsNotEmpty = false;
 
@@ -593,9 +591,9 @@ jQuery(function ($) {
     });
 
     /*** STEEL TRAY SIZE ***/
-    $("#steel_tray_size").change(function () {
+    jQuery("#steel-tray-size").change(function () {
 
-        if ($("#steel_tray_size option:selected").val() === "") {
+        if (jQuery("#steel-tray-size option:selected").val() === "") {
 
             steelTraySizeIsNotEmpty = false;
 
@@ -610,9 +608,9 @@ jQuery(function ($) {
     });
 
     /*** ALUMINIYM TRAY SIZE ***/
-    $("#slct_tray_size_pat").change(function () {
+    jQuery("#aluminium-tray-size").change(function () {
 
-        if ($("#slct_tray_size_pat option:selected").val() === "") {
+        if (jQuery("#aluminium-tray-size option:selected").val() === "") {
 
             aluminiumTraySizeIsNotEmpty = false;
 
@@ -627,9 +625,9 @@ jQuery(function ($) {
     });
 
     /*** STEEL TUB REMOVAL ***/
-    $("#sclt_tub_removal").change(function () {
+    jQuery("#steel-tub-removal").change(function () {
 
-        if ($("#sclt_tub_removal option:selected").val() === "") {
+        if (jQuery("#steel-tub-removal option:selected").val() === "") {
 
             steelTubRemovalIsNotEmpty = false;
 
@@ -644,9 +642,9 @@ jQuery(function ($) {
     });
 
     /*** ALUMINIUM TUB REMOVAL ***/
-    $("#sclt_tub_removal-premium").change(function () {
+    jQuery("#steel-tub-removal-premium").change(function () {
 
-        if ($("#sclt_tub_removal-premium option:selected").val() === "") {
+        if (jQuery("#steel-tub-removal-premium option:selected").val() === "") {
 
             aluminiumTubRemovalIsNotEmpty = false;
 
@@ -661,9 +659,9 @@ jQuery(function ($) {
     });
 
     /*** STEEL TAIL LIGHTS ***/
-    $("#slct_tail_light").change(function () {
+    jQuery("#steel-tail-lights").change(function () {
 
-        if ($("#slct_tail_light option:selected").val() === "") {
+        if (jQuery("#steel-tail-lights option:selected").val() === "") {
 
             steelTailLightsIsNotEmpty = false;
 
@@ -678,9 +676,9 @@ jQuery(function ($) {
     });
 
     /*** ALUMINIUM TAIL LIGHTS ***/
-    $("#slct_tail_light-premium").change(function () {
+    jQuery("#steel-tail-lights-premium").change(function () {
 
-        if ($("#slct_tail_light-premium option:selected").val() === "") {
+        if (jQuery("#steel-tail-lights-premium option:selected").val() === "") {
 
             aluminiumTailLightsIsNotEmpty = false;
 
@@ -695,9 +693,9 @@ jQuery(function ($) {
     });
 
     /*** FIBREGLASS CANOPY WINDOW TYPE ***/
-    $("#slct_fiberglass_window_type").change(function () {
+    jQuery("#slct_fiberglass_window_type").change(function () {
 
-        if ($("#slct_fiberglass_window_type option:selected").val() === "") {
+        if (jQuery("#slct_fiberglass_window_type option:selected").val() === "") {
 
             fibreglassWindowTypeIsNotEmpty = false;
 
@@ -715,184 +713,147 @@ jQuery(function ($) {
 });
 
 
-/*** Fitting Location ***/
-function fittingLocation() {
-    $("#fitting_location").change(function () {
-        if ((this.value === "Boronia, VIC 3155") || ($(this).val() === "Dandenong, VIC 3175") || ($(this).val() === "Laverton, VIC 3026") || ($(this).val() === "Northgate, QLD 4013")) {
-            $("#dual-battery-system-input-1").parent().removeClass("text-disabled");
-            $("#dual-battery-system-input-1").attr("disabled", false);
-            $("#bluemax-suspension-card-input-6").parent().removeClass("text-disabled");
-            $("#bluemax-suspension-card-input-6").attr("disabled", false);
-            $("#snorkel-card-input-7").parent().removeClass("text-disabled");
-            $("#snorkel-card-input-7").attr("disabled", false);
-            $("#diff-breathers-card-input-8").parent().removeClass("text-disabled");
-            $("#diff-breathers-card-input-8").attr("disabled", false);
-            $("#driving-lights-card-input-9").parent().removeClass("text-disabled");
-            $("#driving-lights-card-input-9").attr("disabled", false);
-            $("#gme-uhf-radio-card-input-10").parent().removeClass("text-disabled");
-            $("#gme-uhf-radio-card-input-10").attr("disabled", false);
-            $("#redarc-tow-pro-elite-card-input-11").parent().removeClass("text-disabled");
-            $("#redarc-tow-pro-elite-card-input-11").attr("disabled", false);
-        } else {
-            $("#dual-battery-system-input-1").parent().addClass("text-disabled");
-            $("#dual-battery-system-input-1").attr("disabled", true);
-            $("#bluemax-suspension-card-input-6").parent().addClass("text-disabled");
-            $("#bluemax-suspension-card-input-6").attr("disabled", true);
-            $("#snorkel-card-input-7").parent().addClass("text-disabled");
-            $("#snorkel-card-input-7").attr("disabled", true);
-            $("#diff-breathers-card-input-8").parent().addClass("text-disabled");
-            $("#diff-breathers-card-input-8").attr("disabled", true);
-            $("#driving-lights-card-input-9").parent().addClass("text-disabled");
-            $("#driving-lights-card-input-9").attr("disabled", true);
-            $("#gme-uhf-radio-card-input-10").parent().addClass("text-disabled");
-            $("#gme-uhf-radio-card-input-10").attr("disabled", true);
-            $("#redarc-tow-pro-elite-card-input-11").parent().addClass("text-disabled");
-            $("#redarc-tow-pro-elite-card-input-11").attr("disabled", true);
-        }
-    });
-}
-
 /*** PRODUCT SELECTION ***/
 function productSelection() {
 
-    if ($("#rdo-steel-tray").is(":checked")) {
+    if (jQuery("#rdo-steel-tray").is(":checked")) {
 
-        $("#booking_note").html("<b>NOTE: </b> We only accept 1 booking per day.");
+        jQuery("#booking_note").html("<b>NOTE: </b> We only accept 1 booking per day.");
 
         steelTrayIsSelected = true;
         aluminiumTrayIsSelected = false;
         fibreglassCanopyIsSelected = false;
 
-        $("#ipb-icon").removeClass("rdo-disabled-icon");
-        $("#ipb-text").removeClass("rdo-disabled");
-        $("#diy-icon").removeClass("rdo-disabled-icon");
-        $("#diy-text").removeClass("rdo-disabled");
-        $("#radioo1").prop("disabled", false);
-        $("#radioo2").prop("disabled", false);
+        jQuery("#ipb-icon").removeClass("rdo-disabled-icon");
+        jQuery("#ipb-text").removeClass("rdo-disabled");
+        jQuery("#diy-icon").removeClass("rdo-disabled-icon");
+        jQuery("#diy-text").removeClass("rdo-disabled");
+        jQuery("#rdo-installation").prop("disabled", false);
+        jQuery("#rdo-diy").prop("disabled", false);
 
-        if (($("#radioo1").is(":checked")) && (fittingLocationChanged == true)) {
-
-            openCard("bs_steel_tray_card", "tray_accessories");
-            closeCard();
-            refreshSlick();
-
-            disableHiddenFields("bs_steel_tray_card", "steel_tray_fieldset");
-
-            $("#txt-fitting-location").html("Fitting");
-
-            $("#fibreglass_accessories").hide();
-
-            $("#steel_tray_tub_removal_container").show();
-            $("#sclt_tub_removal").prop("disabled", false);
-            $("#steel_tray_tail_lights_container").show();
-            $("#slct_tail_light").prop("disabled", false);
-            $("#steel_tray_drivetrain_container").show();
-            $("input[name='steel_drivetrain']").prop("disabled", false);
-
-        } else if (($("#radioo2").is(":checked")) && (fittingLocationChanged == true)) {
+        if ((jQuery("#rdo-installation").is(":checked")) && (fittingLocationChanged == true)) {
 
             openCard("bs_steel_tray_card", "tray_accessories");
             closeCard();
             refreshSlick();
 
-            disableHiddenFields("bs_steel_tray_card", "steel_tray_fieldset");
+            disableHiddenFields("bs_steel_tray_card", "form-steel-tray");
 
-            $("#txt-fitting-location").html("Pickup");
+            jQuery("#txt-fitting-location").html("Fitting");
 
-            $("#fibreglass_accessories").hide();
+            jQuery("#fibreglass_accessories").hide();
 
-            $("#steel_tray_tub_removal_container").hide();
-            $("#sclt_tub_removal").prop("disabled", true);
-            $("#steel_tray_tail_lights_container").hide();
-            $("#slct_tail_light").prop("disabled", true);
-            $("#steel_tray_drivetrain_container").hide();
-            $("input[name='steel_drivetrain']").prop("disabled", true);
+            jQuery("#steel_tray_tub_removal_container").show();
+            jQuery("#steel-tub-removal").prop("disabled", false);
+            jQuery("#steel_tray_tail_lights_container").show();
+            jQuery("#steel-tail-lights").prop("disabled", false);
+            jQuery("#steel_tray_drivetrain_container").show();
+            jQuery("input[name='steel_drivetrain']").prop("disabled", false);
+
+        } else if ((jQuery("#rdo-diy").is(":checked")) && (fittingLocationChanged == true)) {
+
+            openCard("bs_steel_tray_card", "tray_accessories");
+            closeCard();
+            refreshSlick();
+
+            disableHiddenFields("bs_steel_tray_card", "form-steel-tray");
+
+            jQuery("#txt-fitting-location").html("Pickup");
+
+            jQuery("#fibreglass_accessories").hide();
+
+            jQuery("#steel_tray_tub_removal_container").hide();
+            jQuery("#steel-tub-removal").prop("disabled", true);
+            jQuery("#steel_tray_tail_lights_container").hide();
+            jQuery("#steel-tail-lights").prop("disabled", true);
+            jQuery("#steel_tray_drivetrain_container").hide();
+            jQuery("input[name='steel_drivetrain']").prop("disabled", true);
 
         }
 
-    } else if ($("#rdo-aluminium-tray").is(":checked")) {
+    } else if (jQuery("#rdo-aluminium-tray").is(":checked")) {
 
         steelTrayIsSelected = false;
         aluminiumTrayIsSelected = true;
         fibreglassCanopyIsSelected = false;
 
-        $("#booking_note").html("<b>NOTE: </b> We only accept 1 booking per day.");
+        jQuery("#booking_note").html("<b>NOTE: </b> We only accept 1 booking per day.");
 
-        $("#ipb-icon").removeClass("rdo-disabled-icon");
-        $("#ipb-text").removeClass("rdo-disabled");
-        $("#diy-icon").removeClass("rdo-disabled-icon");
-        $("#diy-text").removeClass("rdo-disabled");
-        $("#radioo1").prop("disabled", false);
-        $("#radioo2").prop("disabled", false);
+        jQuery("#ipb-icon").removeClass("rdo-disabled-icon");
+        jQuery("#ipb-text").removeClass("rdo-disabled");
+        jQuery("#diy-icon").removeClass("rdo-disabled-icon");
+        jQuery("#diy-text").removeClass("rdo-disabled");
+        jQuery("#rdo-installation").prop("disabled", false);
+        jQuery("#rdo-diy").prop("disabled", false);
 
-        if (($("#radioo1").is(":checked")) && (fittingLocationChanged == true)) {
+        if ((jQuery("#rdo-installation").is(":checked")) && (fittingLocationChanged == true)) {
 
-            $("#txt-fitting-location").html("Fitting");
-
-            openCard("bs_aluminium_tray_card", "tray_accessories");
-            closeCard();
-            refreshSlick();
-
-            disableHiddenFields("bs_aluminium_tray_card", "aluminium_tray_fieldset");
-
-            $("#fibreglass_accessories").hide();
-
-            $("#aluminium_tray_tub_removal_container").show();
-            $("#sclt_tub_removal-premium").prop("disabled", false);
-            $("#aluminium_tray_tail_lights_container").show();
-            $("#slct_tail_light-premium").prop("disabled", false);
-            $("#aluminium_tray_drivetrain_container").show();
-            $("input[name='aluminium_drivetrain']").prop("disabled", false);
-
-        } else if (($("#radioo2").is(":checked")) && (fittingLocationChanged == true)) {
-
-            $("#txt-fitting-location").html("Pickup");
+            jQuery("#txt-fitting-location").html("Fitting");
 
             openCard("bs_aluminium_tray_card", "tray_accessories");
             closeCard();
             refreshSlick();
 
-            disableHiddenFields("bs_aluminium_tray_card", "aluminium_tray_fieldset");
+            disableHiddenFields("bs_aluminium_tray_card", "form-aluminium-tray");
 
-            $("#fibreglass_accessories").hide();
+            jQuery("#fibreglass_accessories").hide();
 
-            $("#aluminium_tray_tub_removal_container").hide();
-            $("#sclt_tub_removal-premium").prop("disabled", true);
-            $("#aluminium_tray_tail_lights_container").hide();
-            $("#slct_tail_light-premium").prop("disabled", true);
-            $("#aluminium_tray_drivetrain_container").hide();
-            $("input[name='aluminium_drivetrain']").prop("disabled", true);
+            jQuery("#aluminium_tray_tub_removal_container").show();
+            jQuery("#steel-tub-removal-premium").prop("disabled", false);
+            jQuery("#aluminium_tray_tail_lights_container").show();
+            jQuery("#steel-tail-lights-premium").prop("disabled", false);
+            jQuery("#aluminium_tray_drivetrain_container").show();
+            jQuery("input[name='aluminium_drivetrain']").prop("disabled", false);
+
+        } else if ((jQuery("#rdo-diy").is(":checked")) && (fittingLocationChanged == true)) {
+
+            jQuery("#txt-fitting-location").html("Pickup");
+
+            openCard("bs_aluminium_tray_card", "tray_accessories");
+            closeCard();
+            refreshSlick();
+
+            disableHiddenFields("bs_aluminium_tray_card", "form-aluminium-tray");
+
+            jQuery("#fibreglass_accessories").hide();
+
+            jQuery("#aluminium_tray_tub_removal_container").hide();
+            jQuery("#steel-tub-removal-premium").prop("disabled", true);
+            jQuery("#aluminium_tray_tail_lights_container").hide();
+            jQuery("#steel-tail-lights-premium").prop("disabled", true);
+            jQuery("#aluminium_tray_drivetrain_container").hide();
+            jQuery("input[name='aluminium_drivetrain']").prop("disabled", true);
 
         }
 
 
-    } else if ($("#rdo-fibreglass-canopy").is(":checked")) {
+    } else if (jQuery("#rdo-fibreglass-canopy").is(":checked")) {
 
         steelTrayIsSelected = false;
         aluminiumTrayIsSelected = false;
         fibreglassCanopyIsSelected = true;
         installationAtPiranhaBranchIsSelected = true;
 
-        $("#booking_note").html("<b>NOTE: </b> We only accept 2 bookings per day.");
+        jQuery("#booking_note").html("<b>NOTE: </b> We only accept 2 bookings per day.");
 
-        $("#ipb-icon").removeClass("rdo-disabled-icon");
-        $("#ipb-text").removeClass("rdo-disabled");
-        $("#diy-icon").addClass("rdo-disabled-icon");
-        $("#diy-text").addClass("rdo-disabled");
-        $("#radioo1").prop("checked", true);
-        $("#radioo1").prop("disabled", false);
-        $("#radioo2").prop("disabled", true);
+        jQuery("#ipb-icon").removeClass("rdo-disabled-icon");
+        jQuery("#ipb-text").removeClass("rdo-disabled");
+        jQuery("#diy-icon").addClass("rdo-disabled-icon");
+        jQuery("#diy-text").addClass("rdo-disabled");
+        jQuery("#rdo-installation").prop("checked", true);
+        jQuery("#rdo-installation").prop("disabled", false);
+        jQuery("#rdo-diy").prop("disabled", true);
 
-        if (($("#radioo1").is(":checked")) && (fittingLocationChanged == true)) {
+        if ((jQuery("#rdo-installation").is(":checked")) && (fittingLocationChanged == true)) {
 
-            $("#txt-fitting-location").html("Fitting");
+            jQuery("#txt-fitting-location").html("Fitting");
 
             openCard("bs_fibreglass_tray_card", "fibreglass_accessories");
             closeCard();
 
-            disableHiddenFields("bs_fibreglass_tray_card", "fibreglass_canopy_fieldset");
+            disableHiddenFields("bs_fibreglass_tray_card", "form-fibreglass-canopy");
 
-            $("#tray_accessories").hide();
+            jQuery("#tray_accessories").hide();
         }
     }
 
@@ -900,48 +861,48 @@ function productSelection() {
 
 
 function openCard(cardID, accessoryID) {
-    $("#bs_personal_information_and_vehicle_information_card").slideDown();
-    $("#" + cardID).slideDown();
-    $("#" + accessoryID).slideDown();
+    jQuery("#bs_personal_information_and_vehicle_information_card").slideDown();
+    jQuery("#" + cardID).slideDown();
+    jQuery("#" + accessoryID).slideDown();
 }
 
 function openTrayCard() {
-    var cardIDs = $('input[type=radio][name=quote_product]:checked').attr('data-card');
-    $("#" + cardIDs).show();
+    var cardIDs = jQuery('input[type=radio][name=quote_product]:checked').attr('data-card');
+    jQuery("#" + cardIDs).show();
 }
 
 function closeCard() {
-    $('input[name="quote_product"]').not(':checked').each(function () {
-        var cardIDs = $(this).attr("data-card");
-        $("#" + cardIDs).hide();
+    jQuery('input[name="quote_product"]').not(':checked').each(function () {
+        var cardIDs = jQuery(this).attr("data-card");
+        jQuery("#" + cardIDs).hide();
     });
 }
 
 function refreshSlick() {
-    $('.mi-slick-this').slick('refresh');
-    $('.steel-slider').slick('refresh');
-    $('.aluminium-slider').slick('refresh');
-    $('.fibreglass-slider').slick('refresh');
+    jQuery('.mi-slick-this').slick('refresh');
+    jQuery('.steel-slider').slick('refresh');
+    jQuery('.aluminium-slider').slick('refresh');
+    jQuery('.fibreglass-slider').slick('refresh');
 
-    $('.slick-list.draggable').addClass('pb-3');
+    jQuery('.slick-list.draggable').addClass('pb-3');
 }
 
 /*** INPUT FIELD CHECKER ***/
 function checkField(fieldID) {
 
-    if ($("#" + fieldID).val().length === 0) {
-        $("#" + fieldID).addClass("custom-error");
-        $("#" + fieldID).prev().addClass("text-danger");
-        $("#" + fieldID).next().show();
+    if (jQuery("#" + fieldID).val().length === 0) {
+        jQuery("#" + fieldID).addClass("custom-error");
+        jQuery("#" + fieldID).prev().addClass("text-danger");
+        jQuery("#" + fieldID).next().show();
     } else {
-        $("#" + fieldID).removeClass("custom-error");
-        $("#" + fieldID).prev().removeClass("text-danger");
-        $("#" + fieldID).next().hide();
+        jQuery("#" + fieldID).removeClass("custom-error");
+        jQuery("#" + fieldID).prev().removeClass("text-danger");
+        jQuery("#" + fieldID).next().hide();
     }
 }
 /*** INPUT FIELD CHECKER ***/
 function onInputFocusOut(fieldID) {
-    $("#" + fieldID).blur(function () {
+    jQuery("#" + fieldID).blur(function () {
         checkField(fieldID);
     });
 }
@@ -949,21 +910,21 @@ function onInputFocusOut(fieldID) {
 /*** DROPDOWN SELECT CHECKER ***/
 function dropDownSelect(fieldID) {
 
-    if ($("#" + fieldID + " option:selected").val() === "") {
-        $("#" + fieldID).addClass("custom-dropdown-error");
-        $("#" + fieldID).prev().addClass("text-danger");
-        $("#" + fieldID).next().show();
+    if (jQuery("#" + fieldID + " option:selected").val() === "") {
+        jQuery("#" + fieldID).addClass("custom-dropdown-error");
+        jQuery("#" + fieldID).prev().addClass("text-danger");
+        jQuery("#" + fieldID).next().show();
     } else {
-        $("#" + fieldID).removeClass("custom-dropdown-error");
-        $("#" + fieldID).prev().removeClass("text-danger");
-        $("#" + fieldID).next().hide();
+        jQuery("#" + fieldID).removeClass("custom-dropdown-error");
+        jQuery("#" + fieldID).prev().removeClass("text-danger");
+        jQuery("#" + fieldID).next().hide();
     }
 
 }
 /*** DROPDOWN SELECT CHECKER ***/
 function dropDownOnChangedEvent(fieldID) {
 
-    $("#" + fieldID).change(function () {
+    jQuery("#" + fieldID).change(function () {
         dropDownSelect(fieldID);
     });
 
@@ -971,28 +932,28 @@ function dropDownOnChangedEvent(fieldID) {
 
 function enableViewPrice() {
 
-    $('#btn_view_price').removeAttr('disabled');
-    $('#btn_view_price').addClass('btn-custom-active').removeClass('btn-custom-disabled');
-    $('#text-price').hide();
+    jQuery('#btn_view_price').removeAttr('disabled');
+    jQuery('#btn_view_price').addClass('btn-custom-active').removeClass('btn-custom-disabled');
+    jQuery('#text-price').hide();
 
 }
 
 function disableViewPrice() {
 
-    $('#btn_view_price').attr('disabled', 'disabled');
-    $('#btn_view_price').addClass('btn-custom-disabled').removeClass('btn-custom-active');
-    $('#text-price').show();
+    jQuery('#btn_view_price').attr('disabled', 'disabled');
+    jQuery('#btn_view_price').addClass('btn-custom-disabled').removeClass('btn-custom-active');
+    jQuery('#text-price').show();
 }
 
 function disableHiddenFields(cardID, fieldsetID) {
 
-    if ($("#" + cardID + ":visible").length == 0) {
+    if (jQuery("#" + cardID + ":visible").length == 0) {
 
-        $("#" + fieldsetID).prop("disabled", true);
+        jQuery("#" + fieldsetID).prop("disabled", true);
 
     } else {
 
-        $("#" + fieldsetID).prop("disabled", false);
+        jQuery("#" + fieldsetID).prop("disabled", false);
 
     }
 
@@ -1121,60 +1082,60 @@ function fibreglassCanopy() {
 
 function openWarningPrompt() {
     //bsModal.style.display = "block";
-    $(bsModal).slideDown("fast");
+    jQuery(bsModal).slideDown("fast");
 }
 
 function closeWarningPrompt() {
     //bsModal.style.display = "none";
-    $(bsModal).slideUp("fast");
+    jQuery(bsModal).slideUp("fast");
 }
 
 function resetTrayForms() {
 
-    $('select[id^="size-"]').prop('selectedIndex', 0);
-    $('input[name="steel-tray-accessories[]"]').prop('checked', false);
+    jQuery('select[id^="size-"]').prop('selectedIndex', 0);
+    jQuery('input[name="steel-tray-accessories[]"]').prop('checked', false);
 
     /*** RESET STEEL TRAY ***/
-    $('input[name="steel_tray_color"]').prop('checked', false);
+    jQuery('input[name="steel_tray_color"]').prop('checked', false);
     steelTrayColorIsChecked = false;
-    $('#steel_tray_size').prop('selectedIndex', 0);
+    jQuery('#steel-tray-size').prop('selectedIndex', 0);
     steelTraySizeIsNotEmpty = false;
-    $('#sclt_tub_removal').prop('selectedIndex', 0);
+    jQuery('#steel-tub-removal').prop('selectedIndex', 0);
     steelTubRemovalIsNotEmpty = false;
-    $('#slct_tail_light').prop('selectedIndex', 0);
+    jQuery('#steel-tail-lights').prop('selectedIndex', 0);
     steelTubRemovalIsNotEmpty = false;
-    $('input[name="steel_drivetrain"]').prop('checked', false);
+    jQuery('input[name="steel_drivetrain"]').prop('checked', false);
     steelDriveTrainIsChecked = false;
 
     /*** RESET ALUMINIUM TRAY ***/
-    $('input[name="aluminium_tray_color"]').prop('checked', false);
+    jQuery('input[name="aluminium_tray_color"]').prop('checked', false);
     aluminiumTrayColorIsChecked = false;
-    $('#slct_tray_size_pat').prop('selectedIndex', 0);
+    jQuery('#aluminium-tray-size').prop('selectedIndex', 0);
     aluminiumTraySizeIsNotEmpty = false;
-    $('#sclt_tub_removal-premium').prop('selectedIndex', 0);
+    jQuery('#steel-tub-removal-premium').prop('selectedIndex', 0);
     aluminiumTubRemovalIsNotEmpty = false;
-    $('#slct_tail_light-premium').prop('selectedIndex', 0);
+    jQuery('#steel-tail-lights-premium').prop('selectedIndex', 0);
     aluminiumTailLightsIsNotEmpty = false;
-    $('input[name="aluminium_drivetrain"]').prop('checked', false);
+    jQuery('input[name="aluminium_drivetrain"]').prop('checked', false);
     aluminiumDriveTrainIsChecked = false;
 
     /*** RESET FIBREGLASS CANOPY ***/
-    $('#slct_fiberglass_window_type').prop('selectedIndex', 0);
+    jQuery('#slct_fiberglass_window_type').prop('selectedIndex', 0);
     fibreglassWindowTypeIsNotEmpty = false;
-    $('input[name="canopy_color"]').prop('checked', false);
+    jQuery('input[name="canopy_color"]').prop('checked', false);
     fibreglassCanopyColorIsChecked = false;
 
-    $('span[id^="sp-"]').hide();
-    $('select[id^="size-"]').hide();
-    $('input[name="fibreglass-opt-ext[]"]').prop('checked', false);
+    jQuery('span[id^="sp-"]').hide();
+    jQuery('select[id^="size-"]').hide();
+    jQuery('input[name="fibreglass-opt-ext[]"]').prop('checked', false);
 
     disableViewPrice();
 }
 
 function enableBlockRadio() {
 
-    if (($("input[name='quote_product']").is(":checked")) && ($("input[name='steel_tray_color']").is(":checked")) || ($("#steel_tray_size option:selected").index() > 0) || ($("#sclt_tub_removal option:selected").index() > 0) || ($("#slct_tail_light option:selected").index() > 0) || ($("#steel_drivetrain").is(":checked")) || ($("input[name='aluminium_tray_color']").is(":checked")) || ($("#slct_tray_size_pat option:selected").index() > 0) || ($("#sclt_tub_removal-premium option:selected").index() > 0) || ($("#slct_tail_light-premium option:selected").index() > 0) || ($("#aluminium_drivetrain").is(":checked")) || ($("#slct_fiberglass_window_type option:selected").index() > 0) || ($("input[name='canopy_color']").is(":checked"))) {
-        $('.blockradio').addClass("d-block").removeClass('d-none');
+    if ((jQuery("input[name='quote_product']").is(":checked")) && (jQuery("input[name='steel_tray_color']").is(":checked")) || (jQuery("#steel-tray-size option:selected").index() > 0) || (jQuery("#steel-tub-removal option:selected").index() > 0) || (jQuery("#steel-tail-lights option:selected").index() > 0) || (jQuery("#steel_drivetrain").is(":checked")) || (jQuery("input[name='aluminium_tray_color']").is(":checked")) || (jQuery("#aluminium-tray-size option:selected").index() > 0) || (jQuery("#steel-tub-removal-premium option:selected").index() > 0) || (jQuery("#steel-tail-lights-premium option:selected").index() > 0) || (jQuery("#aluminium_drivetrain").is(":checked")) || (jQuery("#slct_fiberglass_window_type option:selected").index() > 0) || (jQuery("input[name='canopy_color']").is(":checked"))) {
+        jQuery('.blockradio').addClass("d-block").removeClass('d-none');
     }
 
 }
@@ -1222,7 +1183,7 @@ function deleteAllProperty() {
 }
 
 function cSlick() {
-	$('.mi-slick-this').slick({
+	jQuery('.mi-slick-this').slick({
         infinite: false,
         slidesToShow: 5,
         slidesToScroll: 3,
