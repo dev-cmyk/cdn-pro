@@ -20,10 +20,10 @@
 </head>
 
 <body>
-    <script src="/threejs/three.js-master/build/three.min.js"></script>
-    <script src="/threejs/three.js-master/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="/threejs/three.js-master/examples/js/controls/OrbitControls.js"></script>
-    <script src="/threejs/three.js-master/examples/js/loaders/RGBELoader.js"></script>
+    <script src="cdn-pro/threejs/three.js-master/build/three.min.js"></script>
+    <script src="cdn-pro/threejs/three.js-master/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="cdn-pro/threejs/three.js-master/examples/js/controls/OrbitControls.js"></script>
+    <script src="cdn-pro/threejs/three.js-master/examples/js/loaders/RGBELoader.js"></script>
     <!--script src="/threejs/prime.js"></script-->
 
     <script>
@@ -63,7 +63,7 @@
 
         new THREE.RGBELoader()
             .setDataType(THREE.UnsignedByteType)
-            .setPath('/threejs/envi-map/')
+            .setPath('cdn-pro/threejs/envi-map/')
             .load('empty_warehouse_01_1k.hdr', function (texture) {
 
                 var envMap = pmremGenerator.fromEquirectangular(texture).texture;
@@ -79,7 +79,7 @@
                 var textureLoader = new THREE.TextureLoader();
                 var texture = textureLoader.load('/threejs/envi-map/empty_warehouse_01_1k.hdr');
 
-                new THREE.GLTFLoader().load('/threejs/DCPT_Gltf/DCPT.gltf', result => {
+                new THREE.GLTFLoader().load('cdn-pro/threejs/DCPT_Gltf/DCPT.gltf', result => {
                     model = result.scene.children[0];
                     model.position.set(0, -10, 20);
                     // model.traverse(n => {
